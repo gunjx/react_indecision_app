@@ -12,12 +12,12 @@ export default class IndecisionApp extends React.Component {
   state = {
     options: [],
     selectedOption: undefined
-  }
+  };
 
   // Delete the complete options array from the state
   handleDeleteOptions = () => {
     this.setState(() => ({ options: [] }))
-  }
+  };
 
   // Delete a single option from the options array in the state
   handleDeleteOption = optionToRemove => {
@@ -25,7 +25,7 @@ export default class IndecisionApp extends React.Component {
       // Keep everything that is not the optionToRemove
       options: prevState.options.filter(option => optionToRemove !== option)
     }))
-  }
+  };
 
   // Choose randomly among a set of options and alert to the screen
   handlePick = () => {
@@ -34,11 +34,10 @@ export default class IndecisionApp extends React.Component {
     this.setState(() => ({
       selectedOption: option
     }))
-  }
+  };
 
   // Add an option to the options array
   handleAddOption = option => {
-
     // Add input validation
     if (!option) {
       return 'Enter valid value to add option'
@@ -48,16 +47,15 @@ export default class IndecisionApp extends React.Component {
     this.setState(prevState => ({
       options: prevState.options.concat(option)
     }))
-  }
+  };
 
   handleClearSelectedOption = () => {
     this.setState(() => ({ selectedOption: undefined }))
-  }
+  };
 
   // When the page loads,
   // get the options array from local storage and populate the state
   componentDidMount() {
-
     // Catch error of JSON.parse in case of invalid data
     try {
       const json = localStorage.getItem('options')
@@ -68,7 +66,6 @@ export default class IndecisionApp extends React.Component {
         this.setState(() => ({ options }))
       }
     } catch (e) {
-
       // Do nothing
     }
   }
@@ -76,15 +73,11 @@ export default class IndecisionApp extends React.Component {
   // After the page is updated,
   // save the options array to the local storage for data persistency
   componentDidUpdate(prevProps, prevState) {
-
     // Check if options array actually changed
     if (prevState.options.length !== this.state.options.length) {
       const json = JSON.stringify(this.state.options)
       localStorage.setItem('options', json)
     }
-  }
-  componentWillUnmount() {
-    console.log('componentWillUnmount')
   }
 
   render() {
@@ -105,9 +98,7 @@ export default class IndecisionApp extends React.Component {
               handleDeleteOptions={this.handleDeleteOptions}
               handleDeleteOption={this.handleDeleteOption}
             />
-            <AddOption
-              handleAddOption={this.handleAddOption}
-            />
+            <AddOption handleAddOption={this.handleAddOption} />
           </div>
         </div>
         <OptionModal

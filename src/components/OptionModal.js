@@ -1,5 +1,5 @@
-import React from "react";
-import Modal from "react-modal";
+import React from 'react'
+import Modal from 'react-modal'
 
 /**
  * Render full screen overlay on button click.
@@ -21,6 +21,6 @@ const OptionModal = props => (
       Okay
     </button>
   </Modal>
-);
+)
 
-export default OptionModal;
+export default OptionModal
