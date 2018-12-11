@@ -12,12 +12,12 @@ export default class IndecisionApp extends React.Component {
   state = {
     options: [],
     selectedOption: undefined
-  };
+  }
 
   // Delete the complete options array from the state
   handleDeleteOptions = () => {
     this.setState(() => ({ options: [] }))
-  };
+  }
 
   // Delete a single option from the options array in the state
   handleDeleteOption = optionToRemove => {
@@ -25,7 +25,7 @@ export default class IndecisionApp extends React.Component {
       // Keep everything that is not the optionToRemove
       options: prevState.options.filter(option => optionToRemove !== option)
     }))
-  };
+  }
 
   // Choose randomly among a set of options and alert to the screen
   handlePick = () => {
@@ -34,7 +34,7 @@ export default class IndecisionApp extends React.Component {
     this.setState(() => ({
       selectedOption: option
     }))
-  };
+  }
 
   // Add an option to the options array
   handleAddOption = option => {
@@ -47,11 +47,11 @@ export default class IndecisionApp extends React.Component {
     this.setState(prevState => ({
       options: prevState.options.concat(option)
     }))
-  };
+  }
 
   handleClearSelectedOption = () => {
     this.setState(() => ({ selectedOption: undefined }))
-  };
+  }
 
   // When the page loads,
   // get the options array from local storage and populate the state

@@ -1,3 +1,3 @@
-'use strict';
+'use strict'
 
-console.log('app.js is running');
+console.log('app.js is running')

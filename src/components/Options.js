@@ -13,7 +13,7 @@ const Options = props => (
         className="button button--link"
         onClick={props.handleDeleteOptions}
       >
-      Remove All
+        Remove All
       </button>
     </div>
     {props.options.length === 0 && (
@@ -27,7 +27,6 @@ const Options = props => (
         handleDeleteOption={props.handleDeleteOption}
       />
     ))}
-
   </div>
 )
 

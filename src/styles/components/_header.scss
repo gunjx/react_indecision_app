@@ -4,11 +4,12 @@
   margin-bottom: $xl-size;
   padding: $m-size 0;
 
-    & __title {
+  & __title {
     font-size: $l-size;
     margin: 0;
   }
-    & __subtitle {
+
+  & __subtitle {
     color: $off-white;
     font-size: $m-size;
     font-weight: 500;

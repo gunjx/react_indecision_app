@@ -18,12 +18,10 @@
 
   // Widget message box
   &__message {
-    border-bottom: 1px solid  lighten($light-blue, 10%);
+    border-bottom: 1px solid lighten($light-blue, 10%);
     color: $off-white;
     margin: 0;
     padding: $l-size;
-    text-align: center; 
+    text-align: center;
   }
 }
-
-
