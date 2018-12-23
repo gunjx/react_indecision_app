@@ -15,5 +15,5 @@ const Header = props => (
 export default Header
 
 Header.defaultProps = {
-  title: 'Indecision'
+  title: 'Indecision',
 }

@@ -1,4 +1,4 @@
-import { addExpense, editExpense, removeExpense } from '../../actions/expenses'
+import { removeExpense } from '../../actions/expenses'
 
 test('should setup remove expense action object', () => {
   const action = removeExpense({ id: '123abc' })
@@ -6,6 +6,6 @@ test('should setup remove expense action object', () => {
   // Use toEqual to test for equality for objects and arrays
   expect(action).toEqual({
     type: 'REMOVE_EXPENSE',
-    id: '123abc'
+    id: '123abc',
   })
 })

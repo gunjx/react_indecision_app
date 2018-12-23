@@ -11,46 +11,7 @@ import OptionModal from './OptionModal'
 export default class IndecisionApp extends React.Component {
   state = {
     options: [],
-    selectedOption: undefined
-  }
-
-  // Delete the complete options array from the state
-  handleDeleteOptions = () => {
-    this.setState(() => ({ options: [] }))
-  }
-
-  // Delete a single option from the options array in the state
-  handleDeleteOption = optionToRemove => {
-    this.setState(prevState => ({
-      // Keep everything that is not the optionToRemove
-      options: prevState.options.filter(option => optionToRemove !== option)
-    }))
-  }
-
-  // Choose randomly among a set of options and alert to the screen
-  handlePick = () => {
-    const randomNum = Math.floor(Math.random() * this.state.options.length)
-    const option = this.state.options[randomNum]
-    this.setState(() => ({
-      selectedOption: option
-    }))
-  }
-
-  // Add an option to the options array
-  handleAddOption = option => {
-    // Add input validation
-    if (!option) {
-      return 'Enter valid value to add option'
-    } else if (this.state.options.indexOf(option) > -1) {
-      return 'This option already exists'
-    }
-    this.setState(prevState => ({
-      options: prevState.options.concat(option)
-    }))
-  }
-
-  handleClearSelectedOption = () => {
-    this.setState(() => ({ selectedOption: undefined }))
+    selectedOption: undefined,
   }
 
   // When the page loads,
@@ -78,6 +39,46 @@ export default class IndecisionApp extends React.Component {
       const json = JSON.stringify(this.state.options)
       localStorage.setItem('options', json)
     }
+  }
+
+  // Delete the complete options array from the state
+  handleDeleteOptions = () => {
+    this.setState(() => ({ options: [] }))
+  }
+
+  // Delete a single option from the options array in the state
+  handleDeleteOption = optionToRemove => {
+    this.setState(prevState => ({
+      // Keep everything that is not the optionToRemove
+      options: prevState.options.filter(option => optionToRemove !== option),
+    }))
+  }
+
+  // Choose randomly among a set of options and alert to the screen
+  handlePick = () => {
+    const randomNum = Math.floor(Math.random() * this.state.options.length)
+    const option = this.state.options[randomNum]
+    this.setState(() => ({
+      selectedOption: option,
+    }))
+  }
+
+  // Add an option to the options array
+  handleAddOption = option => {
+    // Add input validation
+    if (!option) {
+      return 'Enter valid value to add option'
+    } else if (this.state.options.indexOf(option) > -1) {
+      return 'This option already exists'
+    }
+
+    this.setState(prevState => ({
+      options: prevState.options.concat(option),
+    }))
+  }
+
+  handleClearSelectedOption = () => {
+    this.setState(() => ({ selectedOption: undefined }))
   }
 
   render() {
