@@ -14,9 +14,7 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:import/recommended",
-    "plugin:prettier/recommended",
-    "plugin:flowtype/recommended"
+    "plugin:prettier/recommended"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -48,10 +46,8 @@
         "next": "*"
       }
     ],
-    "import/first": 2,
-    "react/sort-comp": 2,
-    "react/sort-prop-types": 2,
-    "react/jsx-sort-props": 2
+    "react/prop-types": 0,
+    "react/sort-comp": 2
   },
   "settings": {
     "import/resolver": "webpack"
