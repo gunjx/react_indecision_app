@@ -24,7 +24,8 @@
 /site
 
 # Transpiled JavaScript
-/public/scripts/app.js
+/public/app.js
+/public/bundle.js
 
 # Playground folder
 /src/playground
